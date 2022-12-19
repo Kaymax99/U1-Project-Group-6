@@ -51,7 +51,9 @@ input {
     border: transparent;
     width: 46rem;
     height: 1.5rem;
+    color: white;
 }
+
 
 hr {
     width: 52rem;
