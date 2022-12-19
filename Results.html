@@ -5,11 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Results Page</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./Results.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header>
-      <img src="./assets/img/epicode_logo.png" />
+      <img id="logo" src="./assets/img/epicode_logo.png" />
     </header>
     <main>
       <div id="mainHeading">
@@ -18,8 +26,8 @@
       </div>
       <div class="sidedDiv">
         <h2>Correct</h2>
-        <p id="correctPercentage">Correct %</p>
-        <p id="correctQuestions">x/y questions</p>
+        <p id="correctPercentage" class="percentage numbers">66.7%</p>
+        <p id="correctAnswers"><span class="numbers">4/6</span> questions</p>
       </div>
       <div class="sidedDiv">
         CHART DOMANDE
@@ -35,12 +43,12 @@
       </div>
       <div class="sidedDiv">
         <h2>Wrong</h2>
-        <p id="wrongPercentage">Wrong %</p>
-        <p id="wrongQuestions">x/y questions</p>
+        <p id="wrongPercentage" class="percentage numbers">33.3%</p>
+        <p id="wrongAnswers"><span class="numbers">2/6</span> questions</p>
+      </div>
+      <div>
+        <button id="rateUsButton">RATE US</button>
       </div>
     </main>
-    <footer>
-      <button id="rateUsButton">RATE US</button>
-    </footer>
   </body>
 </html>
