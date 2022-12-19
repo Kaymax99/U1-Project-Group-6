@@ -1,0 +1,37 @@
+/* GENERAL RULES */
+body {
+  background-image: url(./assets/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  margin: 40px 90px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+#logo {
+  width: 10rem;
+  margin-bottom: 70px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 40px;
+}
+
+span {
+  font-weight: bold;
+}
+
+/* MAIN */
+
+h2 {
+  color: #c2128d;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+main p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
