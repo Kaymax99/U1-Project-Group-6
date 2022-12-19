@@ -9,6 +9,7 @@ var palette = anychart.palettes.distinctColors();
 palette.items([{ color: "#c2128d" }, { color: "#00ffff" }]);
 chart.palette(palette);
 chart.background("none");
+anychart.utils.hideTooltips();
 
 chart.labels().format("{%x} — {%y}%").fontSize(16);
 chart.legend(false);
@@ -18,8 +19,12 @@ var label = anychart.standalones.label();
 label
   .useHtml(true)
   .text(
-    `<h3>Congratulations!<br><span>You passed the exam.` +
-      `<br><br></span></h3><p id='certificate'>We'll send you the certificate <br> in a few minutes.<br> Check your email (including <br> promotions/spam folder)</p>`
+    `<div class="testOutcome">
+  <h3>Congratulations!<br /><span>You passed the exam.<br>
+  </span></h3><p id="certificate">We'll send you the certificate<br> in a few minutes.
+  Check your email<br> (including promotions/spam folder)
+  </p>
+</div>`
   )
   .position("center")
   .anchor("center")
