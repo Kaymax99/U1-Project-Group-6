@@ -1,6 +1,15 @@
 h1 {
   color: white;
 }
+body {
+  background-image: url(./assets/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  margin: 40px 90px;
+  font-family: "Poppins", sans-serif;
+}
+
 .test-choices {
   border-radius: 50px 50px 50px 50px;
   width: 15rem;
