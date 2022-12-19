@@ -36,6 +36,31 @@ h1 {
     margin-bottom: 2.5rem;
 }
 
+
+.stars.disabled {
+    pointer-events: none;
+}
+
+.stars a {
+    opacity: 50%;
+    cursor: pointer;
+    padding: 0.4em;
+}
+
+.stars:hover a {
+    opacity: 100%;
+}
+
+.stars a:hover {
+    opacity: 100%;
+}
+
+.stars a:hover~a {
+    opacity: 50%;
+}
+
+
+
 svg {
     margin-bottom: 4rem;
 }
