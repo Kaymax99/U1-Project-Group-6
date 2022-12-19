@@ -1,0 +1,28 @@
+#logo {
+  width: 10rem;
+  margin-bottom: 70px;
+}
+h1 {
+  color: white;
+}
+body {
+  background-image: url(./assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  margin: 40px 90px;
+  font-family: "Poppins", sans-serif;
+}
+
+.test-choices {
+  border-radius: 50px 50px 50px 50px;
+  width: 15rem;
+  height: 5rem;
+  background-color: transparent;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.test-choices:hover {
+  cursor: pointer;
+}
