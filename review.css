@@ -55,6 +55,11 @@ input {
 
 hr {
     width: 52rem;
+    background-color: #b40aec;
+    height: 1px;
+    border: none;
+
+
 }
 
 footer {
