@@ -72,6 +72,15 @@ button {
   font-size: 1.3rem;
 }
 
+.bottone {
+  margin-right: 90px;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+
 input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
