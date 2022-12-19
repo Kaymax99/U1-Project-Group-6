@@ -1,9 +1,27 @@
+body {
+  font-family: "Jost", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
+}
 #logo {
   width: 10rem;
   margin-bottom: 70px;
 }
 h1 {
   color: white;
+  margin: 1em;
+  font-size: 3em;
+  width: 100%;
+}
+.bolder {
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+}
+main {
+  text-align: center;
+}
+footer {
+  text-align: center;
 }
 body {
   background-image: url(./assets/bg.jpg);
@@ -16,13 +34,21 @@ body {
 
 .test-choices {
   border-radius: 50px 50px 50px 50px;
-  width: 15rem;
+  width: 25rem;
   height: 5rem;
   background-color: transparent;
   color: white;
   font-size: 1.1rem;
   font-weight: bold;
+  margin-right: 2em;
+  margin-top: 1em;
 }
 .test-choices:hover {
   cursor: pointer;
+}
+.questionsLeft {
+  color: purple;
+}
+footer {
+  margin: 5em;
 }
