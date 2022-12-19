@@ -1,0 +1,24 @@
+body {
+    background-image: url(assets/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin: 40px 90px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+#logo {
+    width: 10rem;
+    margin-bottom: 70px;
+    padding: 1rem;
+
+}
+
+main {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem
+}
