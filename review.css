@@ -56,7 +56,7 @@ h1 {
 }
 
 .stars a:hover~a {
-    opacity: 50%;
+    opacity: 10%;
 }
 
 
@@ -77,6 +77,7 @@ input {
     width: 46rem;
     height: 1.5rem;
     color: white;
+    outline: none;
 }
 
 
