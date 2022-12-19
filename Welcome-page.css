@@ -55,10 +55,12 @@ main p {
 
 .lastdiv {
   display: flex;
+  align-items: center;
 }
 
 .check {
   display: flex;
+  align-items: center;
 }
 
 button {
@@ -68,4 +70,27 @@ button {
   font-weight: bold;
   padding: 15px 50px;
   font-size: 1.3rem;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 1.3rem;
+  width: 1.3rem;
+  border: 2px solid white;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+input[type="checkbox"]:hover {
+  background-color: white;
+}
+
+input[type="checkbox"]:checked {
+  background-color: white;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: bold;
 }
