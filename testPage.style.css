@@ -5,13 +5,27 @@ body {
 }
 #logo {
   width: 10rem;
-  margin-bottom: 70px;
+}
+
+#toppage {
+}
+.chartCard {
+}
+
+.chartBox {
+  width: 13rem;
+  margin-left: 65em;
+}
+#timer {
+  opacity: 0%;
 }
 h1 {
   color: white;
   margin: 1em;
+  margin-top: -1rem;
   font-size: 3em;
   width: 100%;
+  margin-bottom: 3rem;
 }
 .bolder {
   font-weight: 900;
@@ -39,9 +53,10 @@ body {
   background-color: transparent;
   color: white;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-right: 2em;
   margin-top: 1em;
+  font-family: "Poppins", sans-serif;
 }
 .test-choices:hover {
   cursor: pointer;
@@ -51,4 +66,6 @@ body {
 }
 footer {
   margin: 5em;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
 }
