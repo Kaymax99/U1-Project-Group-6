@@ -4,8 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Results Page</title>
   </head>
 
-  <body></body>
+  <body>
+    <header>
+      <img src="./assets/img/epicode_logo.png" />
+    </header>
+    <main>
+      <div id="mainHeading">
+        <h1>Results</h1>
+        <p>The summary of your answers:</p>
+      </div>
+      <div class="sidedDiv">
+        <h2>Correct</h2>
+        <p id="correctPercentage">Correct %</p>
+        <p id="correctQuestions">x/y questions</p>
+      </div>
+      <div class="sidedDiv">
+        CHART DOMANDE
+        <section>
+          <h3>
+            Congratulations!/Sorry<span>You passed/you failed the exam</span>
+          </h3>
+          <p id="certificate">
+            We'll send you the certificate in a few minutes. Check your email
+            (including promotions/spam folder)
+          </p>
+        </section>
+      </div>
+      <div class="sidedDiv">
+        <h2>Wrong</h2>
+        <p id="wrongPercentage">Wrong %</p>
+        <p id="wrongQuestions">x/y questions</p>
+      </div>
+    </main>
+    <footer>
+      <button id="rateUsButton">RATE US</button>
+    </footer>
+  </body>
 </html>
