@@ -109,3 +109,9 @@ button {
 .stars a.active {
   opacity: 100%;
 }
+
+.changeText::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  opacity: 59%;
+}
