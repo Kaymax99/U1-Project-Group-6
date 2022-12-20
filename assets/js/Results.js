@@ -29,7 +29,8 @@ label
   .position("center")
   .anchor("center")
   .hAlign("center")
-  .vAlign("middle");
+  .vAlign("middle")
+  .fontColor("white");
 chart.center().content(label);
 
 chart.container("chartContainer");
