@@ -14,13 +14,80 @@
     />
     
     <title>Epicode test</title>
-  </head>
+  </head></head>
   <body>
+  <div id="toppage">
     <!--SFONDO PAGINA IMG -->
     <header>
       <img id="logo" src="./assets/epicode_logo.png" alt="logo" />
       <!--LOGO-->
+     <body>
+      <div class="chartCard">
+        <div class="chartBox">
+          <canvas id="myChart"></canvas>
+          <input id="timer" type="number" name="" value="2" min="1" max="1" >
+        </div>
+      </div>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const timer= document.getElementById(`timer`).value
+      // setup 
+      const data = {
+        labels: ['Timer', 'Whitespace'],
+        datasets: [{
+          label: 'Weekly Sales',
+          data: [10, 12],
+          backgroundColor: [
+          'rgba(211,211,211, 0.1)',
+          'rgba(0, 255, 255)',
+          ],
+          borderColor: [
+          'rgba(211,211,211, 0.1)',
+          'rgba(211,211,211, 1)',
+          ],
+          	
+        cutout:`95%`
+        }]
+      };
+      const pomodoroTimer ={
+        id: `pomodoroTimer`, 
+        beforeDraw(chart, args, options){
+          const {ctx, chartArea:{width, height}} = chart;
+          ctx.save()
+          ctx.font = " bolder 20px Poppins";
+          ctx.fillStyle= `white`;
+          ctx.textAlign= `center`;
+          ctx.fillText ("Seconds", width/2 , height/3 )
+          ctx.fillText ("00:13", width/2 , height/2 )
+          ctx.fillText ("Remaining", width/2 , height/1.5)
+          ctx.restore();
+        }
+      }
+      // config 
+      const config = {
+        type: 'doughnut',
+        data,
+        options: {
+          plugins: {
+            legend:{
+              display: false
+            },
+            tooltip:{
+              enabled:false
+            }
+        }
+      }, 
+      plugins:[pomodoroTimer]
+    };
+  
+      // render init block
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+      </script>
     </header>
+  </div>
     <main>
       <h1>
         How can I create a
