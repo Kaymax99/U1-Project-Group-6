@@ -30,11 +30,29 @@ h1,
 
 .numbers {
   font-family: "Rubik", sans-serif;
+  text-align: left;
 }
 
 p {
   font-size: 1.1em;
   margin: 0.5rem;
+}
+
+#certificate {
+  font-size: 1em;
+}
+
+#examPass {
+  color: #00ffff;
+  font-weight: 600;
+}
+
+#testOutcomeMessage {
+  font-weight: 600;
+}
+
+#testOutcomeText {
+  font-size: 0.9rem;
 }
 
 .subHeading {
@@ -50,6 +68,35 @@ h2 {
   height: 400px;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+canvas {
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+#chartText {
+  width: 400px;
+  height: 400px;
+  margin-left: 50;
+  font-size: 1.1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  /*   background-color: brown; */
+  /*   -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4); */
 }
 
 .sidedDiv {
@@ -57,6 +104,7 @@ h2 {
 }
 
 #testResult {
+  margin-top: 3em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,9 +112,9 @@ h2 {
 
 .testOutcome {
   color: white;
-  /*   display: flex;
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
 .anychart-credits {

@@ -15,6 +15,14 @@
     />
     <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-pie.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"
+      integrity="sha512-MC1YbhseV2uYKljGJb7icPOjzF2k6mihfApPyPhEAo3NsLUW0bpgtL4xYWK1B+1OuSrUkfOTfhxrRKCz/Jp3rQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
   <body>
@@ -40,6 +48,22 @@
               (including promotions/spam folder)
             </p>
           </div> -->
+          <div id="chartText">
+            <p id="certificate">
+              <span id="testOutcomeMessage">Congratulations!</span><br /><span
+                id="examPass"
+                >You passed the exam.</span
+              >
+              <br /><br />
+              <span id="testOutcomeText"
+                >We'll send you the certificate<br />
+                in a few minutes.<br />
+                Check your email (including<br />
+                promotions/spam folder)</span
+              >
+            </p>
+          </div>
+          <canvas id="myChart"></canvas>
         </div>
         <div class="sidedDiv">
           <h2>Wrong</h2>
