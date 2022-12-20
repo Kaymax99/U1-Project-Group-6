@@ -47,46 +47,46 @@ let questions = [
     },
 
     {
-        question:
-            choice1:
-        choice2:
-            choice3:
-        choice4:
+        question: "In web design, what does CSS stand for?",
+        choice1: "Counter Strike: Source",
+        choice2: "Cascading Style Sheet",
+        choice3: "Corrective Style Sheet",
+        choice4: "Computer Style Sheet",
 
-            answer:
-
-    },
-
-    {
-        question:
-            choice1:
-        choice2:
-            choice3:
-        choice4:
-
-            answer:
+        answer: "Cascading Style Sheet"
 
     },
 
     {
-        question:
-            choice1:
-        choice2:
-            choice3:
-        choice4:
+        question: "What is the code name for the mobile operating system Android 7.0?",
+        choice1: "Marshmallow",
+        choice2: "Ice Cream Sandwich",
+        choice3: "Jelly Bean",
+        choice4: "Nougat",
 
-            answer:
+        answer: "Nougat"
 
     },
 
     {
-        question:
-            choice1:
-        choice2:
-            choice3:
-        choice4:
+        question: "On Twitter, what is the character limit for a Tweet?",
+        choice1: "100",
+        choice2: "140",
+        choice3: "160",
+        choice4: "120",
 
-            answer:
+        answer: "140"
+
+    },
+
+    {
+        question: "Which programming language shares its name with an island in Indonesia?",
+        choice1: "C",
+        choice2: "Python",
+        choice3: "Java",
+        choice4: "Jakarta",
+
+        answer: "Java"
 
     },
 
