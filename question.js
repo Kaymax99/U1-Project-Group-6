@@ -14,35 +14,35 @@ let availableQuestion = []
 
 let questions = [
     {
-        question:
-            choice1:
-        choice2:
-            choice3:
-        choice4:
+        question: "What does CPU stand for?",
+        choice1: "Central Process Unit",
+        choice2: "Computer Personal Unit",
+        choice3: "Central Processor Unit",
+        choice4: "Central Processing Unit",
 
-            answer:
-
-    },
-
-    {
-        question:
-            choice1:
-        choice2:
-            choice3:
-        choice4:
-
-            answer:
+        answer: "Central Processing Unit"
 
     },
 
     {
-        question:
-            choice1:
-        choice2:
-            choice3:
-        choice4:
+        question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+        choice1: "Static",
+        choice2: "Private",
+        choice3: "Final",
+        choice4: "Public",
 
-            answer:
+        answer: "Final"
+
+    },
+
+    {
+        question: "What is the most preferred image format used for logos in the Wikimedia database?",
+        choice1: ".svg",
+        choice2: ".png",
+        choice3: ".jpeg",
+        choice4: ".gif",
+
+        answer: ".svg"
 
     },
 
