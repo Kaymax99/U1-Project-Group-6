@@ -162,6 +162,8 @@ const reloadTimeOut = () => {
 }
  */
 
+//--------------------------------------------------- Questions Array ------------------------------------------
+
 const questions = [
   {
     category: "Science: Computers",
