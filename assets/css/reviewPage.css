@@ -35,28 +35,6 @@ h1 {
   margin-bottom: 2.5rem;
 }
 
-.stars.disabled {
-  pointer-events: none;
-}
-
-.stars a {
-  opacity: 50%;
-  cursor: pointer;
-  padding: 0.4em;
-}
-
-.stars:hover a {
-  opacity: 100%;
-}
-
-.stars a:hover {
-  opacity: 100%;
-}
-
-.stars a:hover ~ a {
-  opacity: 10%;
-}
-
 svg {
   margin-bottom: 4rem;
 }
@@ -95,4 +73,39 @@ button {
   font-weight: bold;
   padding: 15px 50px;
   font-size: 1.3rem;
+}
+
+/* STAR */
+.star {
+  margin-right: 10px;
+}
+
+:root {
+  --opacity: 50%;
+}
+
+.stars.disabled {
+  pointer-events: none;
+}
+
+.stars a {
+  opacity: var(--opacity);
+  cursor: pointer;
+  opacity: 20%;
+  padding: 0.4em;
+}
+.stars:hover a {
+  opacity: 100%;
+}
+
+.stars a:hover {
+  opacity: 100%;
+}
+
+.stars a:hover ~ a {
+  opacity: 20%;
+}
+
+.stars a.active {
+  opacity: 100%;
 }
