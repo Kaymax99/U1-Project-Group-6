@@ -1,0 +1,105 @@
+body {
+    background-image: url(assets/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin: 40px 90px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+#logo {
+    width: 10rem;
+    margin-bottom: 70px;
+    padding: 1rem;
+
+}
+
+main {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.primoP {
+    font-size: 1.7rem;
+    margin: 1rem;
+}
+
+.hcapo {
+    font-size: 1.7rem;
+    margin: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+
+.stars.disabled {
+    pointer-events: none;
+}
+
+.stars a {
+    opacity: 50%;
+    cursor: pointer;
+    padding: 0.4em;
+}
+
+.stars:hover a {
+    opacity: 100%;
+}
+
+.stars a:hover {
+    opacity: 100%;
+}
+
+.stars a:hover~a {
+    opacity: 10%;
+}
+
+
+
+svg {
+    margin-bottom: 4rem;
+}
+
+.secondoP {
+    font-size: 1.8rem;
+    margin: 1rem;
+    margin-bottom: 4rem;
+}
+
+input {
+    background: transparent;
+    border: transparent;
+    width: 46rem;
+    height: 1.5rem;
+    color: white;
+    outline: none;
+}
+
+
+hr {
+    width: 52rem;
+    background-color: #c2128d;
+    height: 2px;
+    border: none;
+
+
+}
+
+footer {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+button {
+    background: #00ffff;
+    box-shadow: 0px 0px 23px 1px #00ffff;
+    border: none;
+    font-weight: bold;
+    padding: 15px 50px;
+    font-size: 1.3rem;
+}
