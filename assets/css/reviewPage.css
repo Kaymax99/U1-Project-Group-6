@@ -110,8 +110,12 @@ button {
   opacity: 100%;
 }
 
-.changeText::placeholder {
+#changeText::placeholder {
   font-family: "Poppins", sans-serif;
   color: white;
   opacity: 59%;
+}
+
+button {
+  cursor: pointer;
 }

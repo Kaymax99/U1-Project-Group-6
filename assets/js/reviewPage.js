@@ -11,3 +11,8 @@ stars.forEach((star, clickedIdx) => {
     });
   });
 });
+
+const sendMail = () => {
+  const feedback = document.getElementById("changeText").value;
+  window.location.href = "mailto:sorrentmarco@gmail.com" + feedback;
+};
