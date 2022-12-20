@@ -137,18 +137,32 @@ const resetState = () => {
   }
 };
 
+let correctAnswers = 0;
+
 const selectAnswer = (e) => {
   const selectedButton = e.target;
-  let correctAnswers = 0;
+  /*  console.log(selectedButton.innerText); */
   const correct = selectedButton.dataset.correct;
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    if (correct == "true") {
+      incrementScore();
+    } else {
+      console.log("No!");
+    }
     currentQuestionIndex++;
     setNextQuestion();
-    timer.restart(reloadTimeOut());
   } else {
+    if (correct == "true") {
+      incrementScore(1);
+    } else {
+      console.log("No!");
+    }
     /* location.href = "https://google.com"; */
-    console.log(correctAnswers);
   }
+};
+
+incrementScore = () => {
+  correctAnswers++;
 };
 
 const reloadTimeOut = () => {
@@ -156,11 +170,6 @@ const reloadTimeOut = () => {
     timer.restart(reloadTimeOut());
   }
 };
-
-/* if ((correct = questions.answer.correct)) {
-  correctAnswers++;
-}
- */
 
 //--------------------------------------------------- Questions Array ------------------------------------------
 
