@@ -32,7 +32,7 @@ footer {
   text-align: center;
 }
 body {
-  background-image: url(./assets/bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
