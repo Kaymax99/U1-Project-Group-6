@@ -1,67 +1,3 @@
-const questionContainerElement = document.getElementById("question-container");
-const questionElement = document.getElementById("question");
-const answerButtonsElement = document.getElementById("answer-buttons");
-
-let shuffledQuestions, currentQuestionIndex;
-
-const startGame = () => {
-  shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-  currentQuestionIndex = 0;
-  setNextQuestion();
-};
-
-const setNextQuestion = () => {
-  resetState();
-  showQuestion(shuffledQuestions[currentQuestionIndex]);
-};
-
-const currentQuestion = document.getElementById("currentQuestion");
-
-const showQuestion = (question) => {
-  questionElement.innerText = question.question;
-  currentQuestion.innerText = currentQuestionIndex + 1;
-  question.answers.forEach((answer) => {
-    const button = document.createElement("button");
-    button.innerText = answer.text;
-    button.classList.add("test-choices");
-    if (answer.correct) {
-      button.dataset.correct = answer.correct;
-    }
-    button.addEventListener("click", selectAnswer);
-    answerButtonsElement.appendChild(button);
-  });
-};
-
-const resetState = () => {
-  while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-  }
-};
-
-const selectAnswer = (e) => {
-  const selectedButton = e.target;
-  let correctAnswers = 0;
-  const correct = selectedButton.dataset.correct;
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    currentQuestionIndex++;
-    setNextQuestion();
-    timer.restart(reloadTimeOut());
-  } else {
-    /* location.href = "https://google.com"; */
-    console.log(correctAnswers);
-  }
-};
-
-const reloadTimeOut = () => {
-  if (timeLeft == 0 || selectAnswer(e)) {
-    timer.restart(reloadTimeOut());
-  }
-};
-
-/* if ((correct = questions.answer.correct)) {
-  correctAnswers++;
-}
- */
 //----------------------------------------------- Timer -----------------------------------------------------
 
 let timerInterval = null;
@@ -158,6 +94,73 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
+
+// -------------------------------------------- Questions --------------------------------------------
+
+const questionContainerElement = document.getElementById("question-container");
+const questionElement = document.getElementById("question");
+const answerButtonsElement = document.getElementById("answer-buttons");
+
+let shuffledQuestions, currentQuestionIndex;
+
+const startGame = () => {
+  shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+  currentQuestionIndex = 0;
+  setNextQuestion();
+};
+
+const setNextQuestion = () => {
+  resetState();
+  showQuestion(shuffledQuestions[currentQuestionIndex]);
+};
+
+const currentQuestion = document.getElementById("currentQuestion");
+
+const showQuestion = (question) => {
+  questionElement.innerText = question.question;
+  currentQuestion.innerText = currentQuestionIndex + 1;
+  question.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.innerText = answer.text;
+    button.classList.add("test-choices");
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
+    answerButtonsElement.appendChild(button);
+  });
+};
+
+const resetState = () => {
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+  }
+};
+
+const selectAnswer = (e) => {
+  const selectedButton = e.target;
+  let correctAnswers = 0;
+  const correct = selectedButton.dataset.correct;
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    currentQuestionIndex++;
+    setNextQuestion();
+    timer.restart(reloadTimeOut());
+  } else {
+    /* location.href = "https://google.com"; */
+    console.log(correctAnswers);
+  }
+};
+
+const reloadTimeOut = () => {
+  if (timeLeft == 0 || selectAnswer(e)) {
+    timer.restart(reloadTimeOut());
+  }
+};
+
+/* if ((correct = questions.answer.correct)) {
+  correctAnswers++;
+}
+ */
 
 const questions = [
   {
