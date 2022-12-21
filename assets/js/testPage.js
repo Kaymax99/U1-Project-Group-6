@@ -108,6 +108,7 @@ let totalQuestions = 0;
 
 const startGame = () => {
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+
   currentQuestionIndex = 0;
   setNextQuestion();
 };
@@ -165,10 +166,19 @@ const selectAnswer = (e) => {
     } else {
       incrementWrong();
     }
-    console.log("Correct:", correctAnswers);
-    console.log("Wrong:", wrongAnswers);
-    /* location.href = "https://google.com"; */
+    setAnswers();
+    location.href = "resultsPage.html";
   }
+};
+
+const setAnswers = () => {
+  let finalCorrect = correctAnswers;
+  let finalWrong = wrongAnswers;
+  localStorage.clear();
+  let correctAns = localStorage.setItem("correct", correctAnswers);
+  let wrongAns = localStorage.setItem("wrong", wrongAnswers);
+  console.log("Correct:", finalCorrect);
+  console.log("Wrong:", finalWrong);
 };
 
 const reloadTimeOut = () => {
