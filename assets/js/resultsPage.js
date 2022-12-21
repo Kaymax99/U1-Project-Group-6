@@ -1,24 +1,25 @@
-let correctAns = localStorage.getItem("correct"),
-  wrongAns = localStorage.getItem("wrong");
+let correctAns = localStorage.getItem("Correct"),
+  wrongAns = localStorage.getItem("Wrong"),
+  totalQuestions = localStorage.getItem("Total");
 console.log("You got: ", correctAns, wrongAns);
-let correctPcnt = (correctAns * 100) / 10;
-let wrongPcnt = (wrongAns * 100) / 10;
+let correctPcnt = (correctAns * 100) / totalQuestions;
+let wrongPcnt = (wrongAns * 100) / totalQuestions;
 
 window.onload = () => {
   let finalCorrectPercentage = document.getElementById("correctPercentage");
   let finalWrongtPercentage = document.getElementById("wrongPercentage");
   let finalCorrectAsw = document.getElementById("correctAsw");
   let finalWrongAsw = document.getElementById("wrongAsw");
-  finalCorrectPercentage.innerText = correctPcnt + "%";
-  finalWrongtPercentage.innerText = wrongPcnt + "%";
-  finalCorrectAsw.innerText = correctAns + "/10 questions";
-  finalWrongAsw.innerText = wrongAns + "/10 questions";
+  finalCorrectPercentage.innerText = Math.round(correctPcnt * 10) / 10 + "%";
+  finalWrongtPercentage.innerText = Math.round(wrongPcnt * 10) / 10 + "%";
+  finalCorrectAsw.innerText = correctAns + "/" + totalQuestions + " questions";
+  finalWrongAsw.innerText = wrongAns + "/" + totalQuestions + " questions";
 
   let testOutcome = document.getElementById("chartText");
   let testOutcome2 = document.getElementById("chartText");
 
   const checkPassOrFail = () => {
-    if (correctAns >= 6) {
+    if (correctPcnt >= 60) {
       testOutcome.innerHTML = `<p id='certificate'>
       <span id='testOutcomeMessage'>Congratulations!</span><br /><span id='examPass'>You passed the exam.</span><br /><br /><span id='testOutcomeText'
         >We'll send you the certificate<br />
@@ -41,8 +42,8 @@ window.onload = () => {
     datasets: [
       {
         label: "Test Results",
-        data: [correctPcnt, wrongPcnt],
-        backgroundColor: ["#00ffff", "#c2128d"],
+        data: [wrongPcnt, correctPcnt],
+        backgroundColor: ["#c2128d", "#00ffff"],
         borderWidth: 0,
         hoverOffset: 4,
         cutout: "72%",

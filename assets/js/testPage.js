@@ -1,9 +1,17 @@
 //----------------------------------------------- Timer -----------------------------------------------------
 
-let timerInterval = null;
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const rndInt = randomIntFromInterval(10, 15);
+console.log(rndInt);
+
+let timerInterval;
 const text1 = "Seconds";
 const text2 = "remaining";
-const TIME_LIMIT = 20;
+const TIME_LIMIT = 7;
 
 // Initially, no time has passed, but this will count up
 // and subtract from the TIME_LIMIT
@@ -39,29 +47,46 @@ document.getElementById("timer").innerHTML = `
   <span id="base-timer-label" class="base-timer__label">
   ${formatTimeLeft(timeLeft)}
   </span>
-</div>
-`;
-startTimer();
+</div>`;
 
 function onTimesUp() {
   clearInterval(timerInterval);
+  startTimer(TIME_LIMIT);
+  setTimeout(function () {
+    if (selectedQuestions.length > currentQuestionIndex + 1) {
+      wrongAnswers++;
+      currentQuestionIndex++;
+      console.log("Wrong:", wrongAnswers);
+      setNextQuestion();
+    } else {
+      wrongAnswers++;
+      console.log("Wrong:", wrongAnswers);
+      setAnswers();
+    }
+  }, 1000);
+
+  function resetClick() {
+    clearInterval(timerInterval);
+    startTimer(TIME_LIMIT);
+  }
 }
 
-function startTimer() {
-  timerInterval = setInterval(() => {
+function startTimer(time) {
+  timerInterval = setInterval(timer, 1000);
+  function timer() {
     // The amount of time passed increments by one
     timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
+    timeLeft = time--;
 
     // The time left label is updated
     document.getElementById("base-timer-label").innerHTML =
       formatTimeLeft(timeLeft);
 
-    setCircleDasharray();
+    setCircleDasharray(time - 1);
     if (timeLeft === 0) {
       onTimesUp();
     }
-  }, 1000);
+  }
 }
 // Start with an initial value of 20 seconds
 
@@ -106,23 +131,32 @@ let correctAnswers = 0;
 let wrongAnswers = 0;
 let totalQuestions = 0;
 
+startTimer(TIME_LIMIT);
+function calculateTimeFraction() {
+  const rawTimeFraction = timeLeft / TIME_LIMIT;
+  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+}
+
 const startGame = () => {
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-
+  selectedQuestions = shuffledQuestions.slice(0, rndInt);
+  /* console.log(selectedQuestions); */
   currentQuestionIndex = 0;
   setNextQuestion();
 };
 
 const setNextQuestion = () => {
   resetState();
-  showQuestion(shuffledQuestions[currentQuestionIndex]);
+  showQuestion(selectedQuestions[currentQuestionIndex]);
 };
 
 const currentQuestion = document.getElementById("currentQuestion");
+const maxQuestions = document.getElementById("maxQuestions");
 
 const showQuestion = (question) => {
   questionElement.innerText = question.question;
   currentQuestion.innerText = currentQuestionIndex + 1;
+  maxQuestions.innerText = " / " + selectedQuestions.length;
   question.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerText = answer.text;
@@ -152,14 +186,20 @@ const selectAnswer = (e) => {
   const selectedButton = e.target;
   /*  console.log(selectedButton.innerText); */
   const correct = selectedButton.dataset.correct;
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+  if (selectedQuestions.length > currentQuestionIndex + 1) {
     if (correct == "true") {
       incrementCorrect();
+      console.log("Correct", correctAnswers);
     } else {
       incrementWrong();
+      console.log("Wrong", wrongAnswers);
     }
     currentQuestionIndex++;
-    setNextQuestion();
+    clearInterval(timerInterval);
+    startTimer(TIME_LIMIT);
+    setTimeout(function () {
+      setNextQuestion();
+    }, 1000);
   } else {
     if (correct == "true") {
       incrementCorrect();
@@ -167,7 +207,6 @@ const selectAnswer = (e) => {
       incrementWrong();
     }
     setAnswers();
-    location.href = "resultsPage.html";
   }
 };
 
@@ -175,16 +214,13 @@ const setAnswers = () => {
   let finalCorrect = correctAnswers;
   let finalWrong = wrongAnswers;
   localStorage.clear();
-  let correctAns = localStorage.setItem("correct", correctAnswers);
-  let wrongAns = localStorage.setItem("wrong", wrongAnswers);
-  console.log("Correct:", finalCorrect);
+  let correctAns = localStorage.setItem("Correct", correctAnswers);
+  let wrongAns = localStorage.setItem("Wrong", wrongAnswers);
+  let totalQuestions = localStorage.setItem("Total", selectedQuestions.length);
+  /*   console.log("Correct:", finalCorrect);
   console.log("Wrong:", finalWrong);
-};
-
-const reloadTimeOut = () => {
-  if (timeLeft == 0 || selectAnswer(e)) {
-    timer.restart(reloadTimeOut());
-  }
+  console.log("Total", selectedQuestions.length); */
+  location.href = "resultsPage.html";
 };
 
 //--------------------------------------------------- Questions Array ------------------------------------------
@@ -307,6 +343,65 @@ const questions = [
       { text: "Python", correct: false },
       { text: "C", correct: false },
       { text: "Jakarta", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What kind of language is HTML?",
+    answers: [
+      { text: "Coding", correct: false },
+      { text: "Styling", correct: false },
+      { text: "Global", correct: false },
+      { text: "Markup", correct: true },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does the computer software acronym JVM stand for?",
+    answers: [
+      { text: "Just Virtual Machine", correct: false },
+      { text: "Java Visual Machine", correct: false },
+      { text: "Java Virtual Machine", correct: true },
+      { text: "Java Vendor Machine", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: " RAM stands for Random Access Memory.",
+    answers: [
+      { text: "False", correct: false },
+      { text: "True", correct: true },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "In computing, what does LAN stand for?",
+    answers: [
+      { text: "Local Area Network", correct: true },
+      { text: "Long Antenna Node", correct: false },
+      { text: "Light Access Node", correct: false },
+      { text: "Land Address Navigation", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question:
+      "The series of the Intel HD graphics generation succeeding that of the 5000 and 6000 series (Broadwell) is called:",
+    answers: [
+      { text: "HD Graphics 700", correct: false },
+      { text: "HD Graphics 500", correct: true },
+      { text: "HD Graphics 600", correct: false },
+      { text: "HD Graphics 7000", correct: false },
     ],
   },
 ];

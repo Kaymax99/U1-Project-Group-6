@@ -132,8 +132,9 @@ h1 {
   scale: 1.1;
 }
 
-.questionsLeft {
+#maxQuestions {
   color: #c2128d;
+  font-weight: 600;
 }
 
 .hide {
