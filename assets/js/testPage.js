@@ -102,6 +102,9 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 
 let shuffledQuestions, currentQuestionIndex;
+let correctAnswers = 0;
+let wrongAnswers = 0;
+let totalQuestions = 0;
 
 const startGame = () => {
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
@@ -137,7 +140,12 @@ const resetState = () => {
   }
 };
 
-let correctAnswers = 0;
+incrementCorrect = () => {
+  correctAnswers++;
+};
+incrementWrong = () => {
+  wrongAnswers++;
+};
 
 const selectAnswer = (e) => {
   const selectedButton = e.target;
@@ -145,24 +153,22 @@ const selectAnswer = (e) => {
   const correct = selectedButton.dataset.correct;
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     if (correct == "true") {
-      incrementScore();
+      incrementCorrect();
     } else {
-      console.log("No!");
+      incrementWrong();
     }
     currentQuestionIndex++;
     setNextQuestion();
   } else {
     if (correct == "true") {
-      incrementScore(1);
+      incrementCorrect();
     } else {
-      console.log("No!");
+      incrementWrong();
     }
+    console.log("Correct:", correctAnswers);
+    console.log("Wrong:", wrongAnswers);
     /* location.href = "https://google.com"; */
   }
-};
-
-incrementScore = () => {
-  correctAnswers++;
 };
 
 const reloadTimeOut = () => {
