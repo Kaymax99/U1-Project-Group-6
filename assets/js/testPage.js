@@ -11,7 +11,7 @@ console.log(rndInt);
 let timerInterval;
 const text1 = "Seconds";
 const text2 = "remaining";
-const TIME_LIMIT = 7;
+const TIME_LIMIT = 30;
 
 // Initially, no time has passed, but this will count up
 // and subtract from the TIME_LIMIT
