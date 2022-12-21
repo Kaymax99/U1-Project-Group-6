@@ -186,6 +186,9 @@ const selectAnswer = (e) => {
   const selectedButton = e.target;
   /*  console.log(selectedButton.innerText); */
   const correct = selectedButton.dataset.correct;
+  Array.from(answerButtonsElement.children).forEach((button) => {
+    setStatusClass(button, button.dataset.correct);
+  });
   if (selectedQuestions.length > currentQuestionIndex + 1) {
     if (correct == "true") {
       incrementCorrect();
@@ -209,6 +212,21 @@ const selectAnswer = (e) => {
     setAnswers();
   }
 };
+
+function setStatusClass(element, correct) {
+  clearStatusClass(element);
+  if (correct) {
+    element.classList.add("correct");
+  } else {
+    element.classList.add("wrong");
+  }
+}
+
+function clearStatusClass(element) {
+  element.classList.remove("correct");
+  element.classList.remove("hover");
+  element.classList.remove("wrong");
+}
 
 const setAnswers = () => {
   let finalCorrect = correctAnswers;
