@@ -22,3 +22,8 @@ const sendMail = (event) => {
     }
   }
 };
+
+const webSite = document.getElementById("goToEpicode");
+webSite.addEventListener("click", () => {
+  window.open("https://epicode.com/it/");
+});
