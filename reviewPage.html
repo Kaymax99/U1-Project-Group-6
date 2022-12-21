@@ -190,13 +190,14 @@
         type="text"
         placeholder="Write your comment here"
         id="changeText"
+        onkeyup="sendMail(event)"
       />
 
       <hr />
     </main>
 
     <footer>
-      <button onclick="sendMail()">MORE INFO</button>
+      <button id="goToEpicode">MORE INFO</button>
     </footer>
     <script src="./assets/js/reviewPage.js"></script>
   </body>

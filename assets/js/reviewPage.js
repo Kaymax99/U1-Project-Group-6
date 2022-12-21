@@ -12,7 +12,18 @@ stars.forEach((star, clickedIdx) => {
   });
 });
 
-const sendMail = () => {
+const sendMail = (event) => {
   const feedback = document.getElementById("changeText").value;
-  window.location.href = "mailto:sorrentmarco@gmail.com" + feedback;
+  if (event.key === "Enter") {
+    if (feedback === "") {
+      alert("non lasciare vuoto");
+    } else {
+      alert("feedback inviato!");
+    }
+  }
 };
+
+const webSite = document.getElementById("goToEpicode");
+webSite.addEventListener("click", () => {
+  window.open("https://epicode.com/it/");
+});
