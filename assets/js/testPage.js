@@ -167,7 +167,7 @@ const selectAnswer = (e) => {
     }
     console.log("Correct:", correctAnswers);
     console.log("Wrong:", wrongAnswers);
-    /* location.href = "https://google.com"; */
+    location.href = "resultsPage.html";
   }
 };
 
