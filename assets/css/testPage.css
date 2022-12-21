@@ -2,13 +2,22 @@ body {
   font-family: "Jost", sans-serif;
   font-family: "Poppins", sans-serif;
   font-family: "Rubik", sans-serif;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  margin: 40px 90px;
+  font-family: "Poppins", sans-serif;
 }
+
 #logo {
   width: 10rem;
 }
+
 #timer {
   margin-left: 72em;
 }
+
 /* Sets the containers height and width */
 .base-timer {
   position: relative;
@@ -27,6 +36,7 @@ body {
   stroke-width: 7px;
   stroke: grey;
 }
+
 .base-timer__label {
   position: absolute;
 
@@ -45,6 +55,7 @@ body {
   /* Sort of an arbitrary number; adjust to your liking */
   font-size: 35px;
 }
+
 .base-timer__path-remaining {
   /* Just as thick as the original ring */
   stroke-width: 7px;
@@ -67,10 +78,12 @@ body {
   /* Flips the svg and makes the animation to move left-to-right */
   transform: scaleX(1);
 }
+
 main {
   text-align: center;
   align-items: center;
 }
+
 h1 {
   color: white;
   margin-top: -1rem;
@@ -84,17 +97,20 @@ h1 {
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  background-image: url(../img/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  margin: 40px 90px;
-  font-family: "Poppins", sans-serif;
-}
 .buttons {
   text-align: center;
 }
+
+#question-container {
+  margin: 5rem auto;
+  text-align: center;
+  width: 60%;
+}
+
+.next {
+  margin: 2rem;
+}
+
 .test-choices {
   border-radius: 50px 50px 50px 50px;
   border: 3px;
@@ -109,15 +125,41 @@ body {
   font-family: "Poppins", sans-serif;
   box-shadow: -3px 0px 0px 1px rgba(255, 255, 255, 1);
 }
+
 .test-choices:hover {
   cursor: pointer;
   background-color: #c2128d;
+  scale: 1.1;
 }
+
 .questionsLeft {
   color: #c2128d;
 }
+
+.hide {
+  display: none;
+}
+
+#nextBtn {
+  font-family: "Jost", sans-serif;
+  color: white;
+  background-color: transparent;
+  border: solid 2px white;
+  font-size: 1.3em;
+  font-weight: 600;
+  padding: 0.5em 3em;
+  margin: 2em;
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 footer {
-  margin: 5em;
+  margin: 5rem auto;
   font-family: "Poppins", sans-serif;
   letter-spacing: 2px;
   text-align: center;

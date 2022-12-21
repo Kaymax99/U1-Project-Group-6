@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/testPage.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E />
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rubik:wght@400;500;600;700&display=swap"
@@ -15,28 +15,34 @@
     <title>Epicode test</title>
   </head></head>
   <body>
-  <div id="toppage">
-    <header>
-      <img id="logo" src="./assets/img/epicode_logo.png" alt="logo" />
-     <body>
-     <div id="timer"></div> 
-    </header>
-  </div>
-      <h1>
-        How can I create a
-        <div class="bolder">checkbox in HTML?</div>
-      </h1>
-      <div class="buttons">
-        <button class="test-choices">inputtypecheck</button>
-        <button class="test-choices">inputtypecheck</button>
-      <br>
-        <button class="test-choices">inputtypecheck</button>
-        <button class="test-choices">inputtypecheck</button>
+    <div id="toppage">
+      <header>
+        <img id="logo" src="./assets/img/epicode_logo.png" alt="logo" />
+      <div id="timer"></div> 
+      </header>
+    </div>
+
+    <main>
+      <div id="question-container" class="">
+        <h1 id="question"></h1>
+        <div id="answer-buttons">
+          <div class="buttons">
+            <button class="test-choices">Answer 1</button>
+            <button class="test-choices">Answer 2</button>
+          </div>
+          <div class="buttons">
+            <button class="test-choices">Answer 3</button>
+            <button class="test-choices">Answer 4</button>
+          </div>
+        </div>
       </div>
     </main>
+
     <footer>
-      <h4>QUESTION 1<span class="questionsLeft"> / 10</span></h4>
+      <div class="center">
+        <h4>QUESTION <span id="currentQuestion"> </span><span class="questionsLeft"> / 10</span></h4>
+      </div>
     </footer>
-    <script src="./assets/js/test.js"></script>
-  </body>
+</body>
+<script src="./assets/js/testPage.js"></script>
 </html>
