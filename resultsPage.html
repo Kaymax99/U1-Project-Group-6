@@ -28,8 +28,8 @@
       <div id="testResult">
         <div class="sidedDiv">
           <h2>Correct</h2>
-          <p id="correctPercentage" class="percentage numbers">66.7%</p>
-          <p id="correctAnswers"><span class="numbers">4/6</span> questions</p>
+          <p id="correctPercentage" class="percentage numbers"></p>
+          <p id="correctAsw"><span class="numbers"></span></p>
         </div>
         <div id="chartContainer" class="sidedDiv">
           <!-- <div class="testOutcome">
@@ -39,34 +39,19 @@
               (including promotions/spam folder)
             </p>
           </div> -->
-          <div id="chartText">
-            <p id="certificate">
-              <span id="testOutcomeMessage">Congratulations!</span><br /><span
-                id="examPass"
-                >You passed the exam.</span
-              >
-              <br /><br />
-              <span id="testOutcomeText"
-                >We'll send you the certificate<br />
-                in a few minutes.<br />
-                Check your email (including<br />
-                promotions/spam folder)</span
-              >
-            </p>
-          </div>
+          <div id="chartText"></div>
           <canvas id="myChart"></canvas>
         </div>
         <div class="sidedDiv">
           <h2>Wrong</h2>
-          <p id="wrongPercentage" class="percentage numbers">33.3%</p>
-          <p id="wrongAnswers"><span class="numbers">2/6</span> questions</p>
+          <p id="wrongPercentage" class="percentage numbers">%</p>
+          <p id="wrongAsw"><span class="numbers"></span> questions</p>
         </div>
       </div>
       <div>
-        <button id="rateUsButton"><a href="#">RATE US</a></button>
+        <button id="rateUsButton">RATE US</button>
       </div>
     </main>
   </body>
   <script src="./assets/js/resultsPage.js"></script>
-  <script src="./assets/js/testPage.js"></script>
 </html>
