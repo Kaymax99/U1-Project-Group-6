@@ -1,7 +1,5 @@
 //----------------------------------------------- Timer -----------------------------------------------------
 let timerInterval;
-const text1 = "Seconds";
-const text2 = "remaining";
 const TIME_LIMIT = 30;
 const timerDiv = document.getElementById("timer");
 
@@ -391,6 +389,19 @@ const questions = [
       { text: "Java Vendor Machine", correct: false },
     ],
   },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "How can I create a checkbox in HTML?",
+    answers: [
+      { text: `<input type = "check">`, correct: false },
+      { text: `<input type = "button">`, correct: false },
+      { text: `<input type = "checkbox">`, correct: true },
+      { text: `<checkbox>`, correct: false },
+    ],
+  },
+
   // --------------------------------- Medium ---------------------------------
   {
     category: "Science: Computers",
