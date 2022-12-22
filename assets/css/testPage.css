@@ -100,6 +100,10 @@ br {
 .base-timer__svg {
   /* Flips the svg and makes the animation to move left-to-right */
   transform: scaleX(1);
+  height: 250px;
+  width: 250px;
+  box-shadow: 0px 0px 50px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 200px;
 }
 
 /*countdown style*/
@@ -112,11 +116,32 @@ br {
 #seconds {
   text-align: center;
   margin-top: 10px;
+<<<<<<< HEAD
+  font-size: 15px;
+=======
+>>>>>>> Test-page
 }
 /*REMAINING text style*/
 #remaining {
   font-size: 20px;
   margin-top: 12px;
+<<<<<<< HEAD
+  font-size: 17px;
+}
+
+/*------------------------------------------- Main -----------------------------------------*/
+
+#question-container {
+  margin: 5rem auto;
+  text-align: center;
+  width: 70%;
+}
+
+.buttons {
+  text-align: center;
+}
+
+=======
 }
 
 /*------------------------------------------- Main -----------------------------------------*/
@@ -131,6 +156,7 @@ br {
   text-align: center;
 }
 
+>>>>>>> Test-page
 .next {
   /* Check if still necessary */
   margin: 2rem;
@@ -176,7 +202,7 @@ br {
 
 .test-choices:hover {
   cursor: pointer;
-  background-color: #c2128d;
+  background: linear-gradient(180deg, #c2128d, transparent) #760a61;
   scale: 1.1;
 }
 
