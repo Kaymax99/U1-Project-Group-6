@@ -103,7 +103,7 @@ function formatTimeLeft(time) {
   }
 
   // The output in MM:SS format
-  return `${minutes}:${seconds}`;
+  return `<div id= "seconds">SECONDS<br><div id="countdown">${minutes}:${seconds}<div><div id="remaining">REMAINING<div>`;
 }
 // Divides time left by the defined time limit.
 function calculateTimeFraction() {
@@ -120,6 +120,21 @@ function setCircleDasharray() {
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 
+//Align "clock text"
+/* let countdown = document.getElementById("countdown");
+countdown.style.textAlign = "center";
+countdown.style.fontSize = "50px";
+countdown.style.marginTop = "12px";
+
+//Align "seconds" text
+let alignSecondsText = document.getElementById("seconds");
+alignSecondsText.style.textAlign = "center";
+
+//Align "remaining" text
+let remaining = document.getElementById("remaining");
+remaining.style.fontSize = "20px";
+remaining.style.marginTop = "12px";
+ */
 // -------------------------------------------- Questions --------------------------------------------
 
 const questionContainerElement = document.getElementById("question-container");

@@ -36,16 +36,16 @@ body {
   stroke-width: 7px;
   stroke: grey;
 }
-
+br {
+}
 .base-timer__label {
   position: absolute;
 
   /* Size should match the parent container */
-  width: 200px;
-  height: 200px;
-
-  /* Keep the label aligned to the top */
-  top: 0;
+  width: 50%;
+  height: 50%;
+  left: 50px;
+  top: 42px;
 
   /* Create a flexible box that centers content vertically and horizontally */
   display: flex;
@@ -53,7 +53,7 @@ body {
   justify-content: center;
 
   /* Sort of an arbitrary number; adjust to your liking */
-  font-size: 35px;
+  font-size: 20px;
 }
 
 .base-timer__path-remaining {
@@ -77,6 +77,23 @@ body {
 .base-timer__svg {
   /* Flips the svg and makes the animation to move left-to-right */
   transform: scaleX(1);
+}
+/*-------------------------------------------CLOCK TEXT STYLE-----------------------------------------*/
+/*countdown style*/
+#countdown {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 12px;
+}
+/*SECONDS text style*/
+#seconds {
+  text-align: center;
+  margin-top: 10px;
+}
+/*REMAINING text style*/
+#remaining {
+  font-size: 20px;
+  margin-top: 12px;
 }
 
 main {
