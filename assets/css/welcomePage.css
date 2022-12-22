@@ -92,11 +92,35 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:hover {
-  background-color: white;
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  border: none;
 }
 
 input[type="checkbox"]:checked {
-  background-color: white;
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  border: none;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  -webkit-text-fill-color: transparent;
+  animation: textclip 16.5s linear infinite;
+  display: inline-block;
 }
 
 label {
@@ -128,4 +152,10 @@ label {
   to {
     background-position: 200% center;
   }
+}
+
+.hoverOnButton:hover,
+.hoverOnButton:focus {
+  background: linear-gradient(90deg, #00ffff, transparent) #5bb5fe;
+  color: rgb(0, 0, 0);
 }
