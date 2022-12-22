@@ -24,15 +24,14 @@
 
     <main>
       <div id="question-container" class="">
-        <h1 id="question"></h1>
+        <h1 id="question">Please select a difficulty</h1>
         <div id="answer-buttons">
           <div class="buttons">
-            <button class="test-choices">Answer 1</button>
-            <button class="test-choices">Answer 2</button>
+            <button class="test-choices" id="easy">Easy</button>
+            <button class="test-choices" id="medium">Medium</button>
           </div>
           <div class="buttons">
-            <button class="test-choices">Answer 3</button>
-            <button class="test-choices">Answer 4</button>
+            <button class="test-choices" id="hard">Hard</button>
           </div>
         </div>
       </div>
@@ -40,7 +39,7 @@
 
     <footer>
       <div class="center">
-        <h4>QUESTION <span id="currentQuestion"> </span><span class="questionsLeft"></span><span id="maxQuestions"></span></h4>
+        <h4><span id="currentQuestion"> </span><span class="questionsLeft"></span><span id="maxQuestions"></span></h4>
       </div>
     </footer>
 </body>
