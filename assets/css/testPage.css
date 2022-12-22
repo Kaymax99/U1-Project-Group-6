@@ -1,3 +1,5 @@
+/*------------------------------------------- General -----------------------------------------*/
+
 body {
   font-family: "Jost", sans-serif;
   font-family: "Poppins", sans-serif;
@@ -10,21 +12,40 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+main {
+  text-align: center;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  margin-top: -1rem;
+  font-size: 3em;
+  width: 100%;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/*------------------------------------------- Body -----------------------------------------*/
+
+/*------------------------------------------- Header -----------------------------------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 #logo {
   width: 10rem;
 }
 
-#timer {
-  margin-left: 65em;
-}
+/*------------------------------------------- Clock Style -----------------------------------------*/
 
 /* Sets the containers height and width */
 .base-timer {
   position: relative;
-  height: 350px;
-  width: 350px;
-  text-align: center;
-  margin-top: 30px;
+  height: 200px;
+  width: 200px;
 }
 
 /* Removes SVG styling that would hide the time label */
@@ -37,23 +58,21 @@ body {
 .base-timer__path-elapsed {
   stroke-width: 7px;
   stroke: grey;
-  filter: drop-shadow(0px 0px 10px rgb(1 1 1 / 1));
 }
+
 .base-timer__label {
   position: absolute;
 
-  /* Size should match the parent container */
+  /* Setting size to match the parent container */
   width: 50%;
   height: 50%;
-  left: 90px;
-  top: 35px;
+  left: 50px;
+  top: 42px;
 
-  /* Create a flexible box that centers content vertically and horizontally */
+  /* Creating a flexible box that centers content vertically and horizontally */
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Sort of an arbitrary number; adjust to your liking */
   font-size: 20px;
 }
 
@@ -83,7 +102,7 @@ body {
   box-shadow: 0px 0px 50px 2px rgba(0, 0, 0, 0.5);
   border-radius: 200px;
 }
-/*-------------------------------------------CLOCK TEXT STYLE-----------------------------------------*/
+
 /*countdown style*/
 #countdown {
   text-align: center;
@@ -103,27 +122,7 @@ body {
   font-size: 17px;
 }
 
-main {
-  text-align: center;
-  align-items: center;
-}
-
-h1 {
-  color: white;
-  margin-top: -1rem;
-  font-size: 3em;
-  width: 100%;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-.bolder {
-  font-weight: 900;
-  font-family: "Poppins", sans-serif;
-}
-
-.buttons {
-  text-align: center;
-}
+/*------------------------------------------- Main -----------------------------------------*/
 
 #question-container {
   margin: 5rem auto;
@@ -131,29 +130,30 @@ h1 {
   width: 70%;
 }
 
+.buttons {
+  text-align: center;
+}
+
 .next {
+  /* Check if still necessary */
   margin: 2rem;
 }
 
 .test-choices {
   border-radius: 50px;
+  border: 5px solid transparent;
+  width: 25rem;
+  height: 5rem;
+  background: rgba(255, 255, 255, 0.08);
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
-  margin-right: 1em;
+  margin-right: 2em;
   margin-top: 1em;
-  margin-left: 1em;
-  margin-bottom: 1em;
   font-family: "Poppins", sans-serif;
+  box-shadow: -3px 0px 0px 1px rgba(255, 255, 255, 1);
   -webkit-box-shadow: 0px -1px 0px 3px #f0f0f0;
   box-shadow: 0px -1px 0px 3px #f0f0f0;
-  border: none;
-  background: rgba(255, 255, 255, 0.022);
-  box-shadow: inset 0px -1px 4px rgba(255, 255, 255, 0.32),
-    inset 0px 4px 0px rgba(255, 255, 255, 0.56);
-  width: 25rem;
-  height: 5rem;
-  display: inline-block;
 }
 
 .test-choices:hover {
@@ -166,6 +166,8 @@ h1 {
   color: #c2128d;
   font-weight: 600;
 }
+
+/*------------------------------------------- JS Classes & IDs -----------------------------------------*/
 
 .hide {
   display: none;
@@ -186,27 +188,17 @@ h1 {
   background-color: rgba(255, 0, 0, 0.5);
 }
 
-#nextBtn {
-  font-family: "Jost", sans-serif;
-  color: white;
-  background-color: transparent;
-  border: solid 2px white;
-  font-size: 1.3em;
-  font-weight: 600;
-  padding: 0.5em 3em;
-  margin: 2em;
-  cursor: pointer;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
+/*------------------------------------------- Footer -----------------------------------------*/
 
 footer {
   margin: 5rem auto;
   font-family: "Poppins", sans-serif;
   letter-spacing: 2px;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
