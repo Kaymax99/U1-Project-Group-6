@@ -1,21 +1,7 @@
 //----------------------------------------------- Timer -----------------------------------------------------
-<<<<<<< HEAD
-
-function randomIntFromInterval(min, max) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-const rndInt = randomIntFromInterval(10, 15);
-console.log(rndInt);
-
-let timerInterval;
-const TIME_LIMIT = 30;
-=======
 let timerInterval;
 const TIME_LIMIT = 30;
 const timerDiv = document.getElementById("timer");
->>>>>>> Test-page
 
 // Initially, no time has passed, but this will count up
 // and subtract from the TIME_LIMIT
@@ -52,10 +38,7 @@ document.getElementById("timer").innerHTML = `
   ${formatTimeLeft(timeLeft)}
   </span>
 </div>`;
-<<<<<<< HEAD
-=======
 timerDiv.classList.add("hide");
->>>>>>> Test-page
 
 function onTimesUp() {
   clearInterval(timerInterval);
@@ -156,11 +139,7 @@ function calculateTimeFraction() {
 }
 
 const startGame = () => {
-<<<<<<< HEAD
-  shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-=======
   shuffledQuestions = difficulty.sort(() => Math.random() - 0.5);
->>>>>>> Test-page
   selectedQuestions = shuffledQuestions.slice(0, rndInt);
   /* console.log(selectedQuestions); */
   currentQuestionIndex = 0;
@@ -180,11 +159,7 @@ const maxQuestions = document.getElementById("maxQuestions");
 
 const showQuestion = (question) => {
   questionElement.innerText = question.question;
-<<<<<<< HEAD
-  currentQuestion.innerText = currentQuestionIndex + 1;
-=======
   currentQuestion.innerText = "QUESTION " + (currentQuestionIndex + 1);
->>>>>>> Test-page
   maxQuestions.innerText = " / " + selectedQuestions.length;
   question.answers.forEach((answer) => {
     const button = document.createElement("button");
@@ -264,12 +239,6 @@ const setAnswers = () => {
   let correctAns = localStorage.setItem("Correct", correctAnswers);
   let wrongAns = localStorage.setItem("Wrong", wrongAnswers);
   let totalQuestions = localStorage.setItem("Total", selectedQuestions.length);
-<<<<<<< HEAD
-  /*   console.log("Correct:", finalCorrect);
-  console.log("Wrong:", finalWrong);
-  console.log("Total", selectedQuestions.length); */
-  location.href = "resultsPage.html";
-=======
   /* console.log("Correct:", finalCorrect);
   console.log("Wrong:", finalWrong);
   console.log("Total", selectedQuestions.length); */
@@ -304,7 +273,6 @@ window.onload = () => {
   Array.from(buttonDiff).forEach((button) =>
     button.addEventListener("click", selectTestDifficulty)
   );
->>>>>>> Test-page
 };
 
 //--------------------------------------------------- Questions Array ------------------------------------------
@@ -592,27 +560,6 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-<<<<<<< HEAD
-    difficulty: "easy",
-    question: "What kind of language is HTML?",
-    answers: [
-      { text: "Coding", correct: false },
-      { text: "Styling", correct: false },
-      { text: "Global", correct: false },
-      { text: "Markup", correct: true },
-    ],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question: "What does the computer software acronym JVM stand for?",
-    answers: [
-      { text: "Just Virtual Machine", correct: false },
-      { text: "Java Visual Machine", correct: false },
-      { text: "Java Virtual Machine", correct: true },
-      { text: "Java Vendor Machine", correct: false },
-=======
     difficulty: "medium",
     question:
       "What is the code name for the mobile operating system Android 7.0?",
@@ -621,48 +568,23 @@ const questions = [
       { text: "Nougat", correct: true },
       { text: "Jelly Bean", correct: false },
       { text: "Ice Cream Sandwich", correct: false },
->>>>>>> Test-page
     ],
   },
   {
     category: "Science: Computers",
     type: "boolean",
-<<<<<<< HEAD
-    difficulty: "easy",
-    question: " RAM stands for Random Access Memory.",
-    answers: [
-      { text: "False", correct: false },
-      { text: "True", correct: true },
-=======
     difficulty: "medium",
     question:
       "Pointers were not used in the original C programming language; they were added later on in C++.",
     answers: [
       { text: "False", correct: true },
       { text: "True", correct: false },
->>>>>>> Test-page
     ],
   },
   {
     category: "Science: Computers",
     type: "multiple",
-<<<<<<< HEAD
-    difficulty: "easy",
-    question: "In computing, what does LAN stand for?",
-    answers: [
-      { text: "Local Area Network", correct: true },
-      { text: "Long Antenna Node", correct: false },
-      { text: "Light Access Node", correct: false },
-      { text: "Land Address Navigation", correct: false },
-    ],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-=======
     difficulty: "medium",
->>>>>>> Test-page
     question:
       "The series of the Intel HD graphics generation succeeding that of the 5000 and 6000 series (Broadwell) is called:",
     answers: [
@@ -672,8 +594,6 @@ const questions = [
       { text: "HD Graphics 7000", correct: false },
     ],
   },
-<<<<<<< HEAD
-=======
 
   // --------------------------------- Hard ---------------------------------
   {
@@ -810,5 +730,4 @@ const questions = [
       { text: "Mark Zuckerberg", correct: false },
     ],
   },
->>>>>>> Test-page
 ];
