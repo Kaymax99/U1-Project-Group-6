@@ -9,8 +9,6 @@ const rndInt = randomIntFromInterval(10, 15);
 console.log(rndInt);
 
 let timerInterval;
-const text1 = "Seconds";
-const text2 = "remaining";
 const TIME_LIMIT = 30;
 
 // Initially, no time has passed, but this will count up
@@ -120,21 +118,6 @@ function setCircleDasharray() {
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 
-//Align "clock text"
-/* let countdown = document.getElementById("countdown");
-countdown.style.textAlign = "center";
-countdown.style.fontSize = "50px";
-countdown.style.marginTop = "12px";
-
-//Align "seconds" text
-let alignSecondsText = document.getElementById("seconds");
-alignSecondsText.style.textAlign = "center";
-
-//Align "remaining" text
-let remaining = document.getElementById("remaining");
-remaining.style.fontSize = "20px";
-remaining.style.marginTop = "12px";
- */
 // -------------------------------------------- Questions --------------------------------------------
 
 const questionContainerElement = document.getElementById("question-container");
