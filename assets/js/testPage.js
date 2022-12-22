@@ -75,6 +75,7 @@ function startTimer(time) {
     // The amount of time passed increments by one
     timePassed = timePassed += 1;
     timeLeft = time--;
+    return;
 
     // The time left label is updated
     document.getElementById("base-timer-label").innerHTML =

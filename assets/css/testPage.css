@@ -15,14 +15,16 @@ body {
 }
 
 #timer {
-  margin-left: 72em;
+  margin-left: 65em;
 }
 
 /* Sets the containers height and width */
 .base-timer {
   position: relative;
-  height: 200px;
-  width: 200px;
+  height: 350px;
+  width: 350px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 /* Removes SVG styling that would hide the time label */
@@ -35,8 +37,7 @@ body {
 .base-timer__path-elapsed {
   stroke-width: 7px;
   stroke: grey;
-}
-br {
+  filter: drop-shadow(0px 0px 10px rgb(1 1 1 / 1));
 }
 .base-timer__label {
   position: absolute;
@@ -44,8 +45,8 @@ br {
   /* Size should match the parent container */
   width: 50%;
   height: 50%;
-  left: 50px;
-  top: 42px;
+  left: 90px;
+  top: 35px;
 
   /* Create a flexible box that centers content vertically and horizontally */
   display: flex;
@@ -77,6 +78,10 @@ br {
 .base-timer__svg {
   /* Flips the svg and makes the animation to move left-to-right */
   transform: scaleX(1);
+  height: 250px;
+  width: 250px;
+  box-shadow: 0px 0px 50px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 200px;
 }
 /*-------------------------------------------CLOCK TEXT STYLE-----------------------------------------*/
 /*countdown style*/
@@ -89,11 +94,13 @@ br {
 #seconds {
   text-align: center;
   margin-top: 10px;
+  font-size: 15px;
 }
 /*REMAINING text style*/
 #remaining {
   font-size: 20px;
   margin-top: 12px;
+  font-size: 17px;
 }
 
 main {
@@ -164,8 +171,9 @@ h1 {
 
 .test-choices:hover {
   cursor: pointer;
-  background-color: #c2128d;
+  background: linear-gradient(180deg, #c2128d, transparent) #760a61;
   scale: 1.1;
+  /* background: linear-gradient(180deg, #CD0092 0%, #8B0079 100%), rgba(255, 255, 255, 0.08); */
 }
 
 #maxQuestions {
