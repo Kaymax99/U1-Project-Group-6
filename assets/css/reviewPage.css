@@ -75,6 +75,11 @@ button {
   font-size: 1.3rem;
 }
 
+.hoverOnButton:hover,
+.hoverOnButton:focus {
+  background: linear-gradient(90deg, #00ffff, transparent) #5bb5fe;
+  color: rgb(0, 0, 0);
+}
 /* STAR */
 
 .star {
