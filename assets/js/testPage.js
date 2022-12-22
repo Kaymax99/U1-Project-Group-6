@@ -132,12 +132,6 @@ let correctAnswers = 0;
 let wrongAnswers = 0;
 let totalQuestions = 0;
 
-startTimer(TIME_LIMIT);
-function calculateTimeFraction() {
-  const rawTimeFraction = timeLeft / TIME_LIMIT;
-  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-}
-
 const startGame = () => {
   shuffledQuestions = difficulty.sort(() => Math.random() - 0.5);
   selectedQuestions = shuffledQuestions.slice(0, rndInt);
