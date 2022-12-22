@@ -58,6 +58,7 @@ header {
 .base-timer__path-elapsed {
   stroke-width: 7px;
   stroke: grey;
+  filter: drop-shadow(0px 0px 10px rgb(1 1 1 / 1));
 }
 
 .base-timer__label {
@@ -66,8 +67,8 @@ header {
   /* Setting size to match the parent container */
   width: 50%;
   height: 50%;
-  left: 50px;
-  top: 42px;
+  left: 75px;
+  top: 65px;
 
   /* Creating a flexible box that centers content vertically and horizontally */
   display: flex;
