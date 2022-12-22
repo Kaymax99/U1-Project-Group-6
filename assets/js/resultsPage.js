@@ -1,7 +1,7 @@
 let correctAns = localStorage.getItem("Correct"),
   wrongAns = localStorage.getItem("Wrong"),
   totalQuestions = localStorage.getItem("Total");
-console.log("You got: ", correctAns, wrongAns);
+/* console.log("You got: ", correctAns, wrongAns); */
 let correctPcnt = (correctAns * 100) / totalQuestions;
 let wrongPcnt = (wrongAns * 100) / totalQuestions;
 
