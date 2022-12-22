@@ -45,6 +45,12 @@ svg {
   margin-bottom: 4rem;
 }
 
+#contactUs {
+  width: 70vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
 input {
   background: transparent;
   border: transparent;
