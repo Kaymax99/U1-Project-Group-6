@@ -47,11 +47,11 @@ function onTimesUp() {
     if (selectedQuestions.length > currentQuestionIndex + 1) {
       wrongAnswers++;
       currentQuestionIndex++;
-      console.log("Wrong:", wrongAnswers);
+      /*       console.log("Wrong:", wrongAnswers); */
       setNextQuestion();
     } else {
       wrongAnswers++;
-      console.log("Wrong:", wrongAnswers);
+      /*       console.log("Wrong:", wrongAnswers); */
       setAnswers();
     }
   }, 1000);
@@ -114,6 +114,12 @@ function setCircleDasharray() {
 }
 
 // -------------------------------------------- Questions --------------------------------------------
+window.onload = () => {
+  const buttonDiff = document.getElementsByClassName("test-choices");
+  Array.from(buttonDiff).forEach((button) =>
+    button.addEventListener("click", selectTestDifficulty)
+  );
+};
 
 function randomIntFromInterval(min, max) {
   // min and max included
@@ -162,8 +168,8 @@ const showQuestion = (question) => {
     if (answer.correct) {
       button.dataset.correct = answer.correct;
     }
-    button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
+    button.addEventListener("click", selectAnswer);
   });
 };
 
@@ -182,7 +188,6 @@ incrementWrong = () => {
 
 const selectAnswer = (e) => {
   const selectedButton = e.target;
-  /*  console.log(selectedButton.innerText); */
   const correct = selectedButton.dataset.correct;
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct);
@@ -190,11 +195,14 @@ const selectAnswer = (e) => {
   if (selectedQuestions.length > currentQuestionIndex + 1) {
     if (correct == "true") {
       incrementCorrect();
-      console.log("Correct", correctAnswers);
+      /*       console.log("Correct", correctAnswers); */
     } else {
       incrementWrong();
-      console.log("Wrong", wrongAnswers);
+      /*       console.log("Wrong", wrongAnswers); */
     }
+    Array.from(answerButtonsElement.children).forEach((button) => {
+      button.removeEventListener("click", selectAnswer);
+    });
     currentQuestionIndex++;
     clearInterval(timerInterval);
     startTimer(TIME_LIMIT);
@@ -260,13 +268,6 @@ fetchQuestionsMedium = () => {
 fetchQuestionsHard = () => {
   difficulty = questions.filter((question) => question.difficulty === "hard");
   startGame();
-};
-
-window.onload = () => {
-  const buttonDiff = document.getElementsByClassName("test-choices");
-  Array.from(buttonDiff).forEach((button) =>
-    button.addEventListener("click", selectTestDifficulty)
-  );
 };
 
 //--------------------------------------------------- Questions Array ------------------------------------------
