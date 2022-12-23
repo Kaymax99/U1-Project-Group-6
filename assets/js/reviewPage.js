@@ -31,9 +31,29 @@ const sendMail = (event) => {
   const feedback = document.getElementById("changeText").value;
   if (event.key === "Enter") {
     if (feedback === "") {
-      alert("non lasciare vuoto");
+      const modal = document.getElementById("myModal");
+      const span = document.getElementsByClassName("close")[0];
+      modal.style.display = "block";
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
     } else {
-      alert("feedback inviato!");
+      const modal2 = document.getElementById("myModal2");
+      const span2 = document.getElementsByClassName("close2")[0];
+      modal2.style.display = "block";
+      span2.onclick = function () {
+        modal2.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+      };
     }
   }
 };
