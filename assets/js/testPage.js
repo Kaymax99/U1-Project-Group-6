@@ -105,7 +105,6 @@ function startTimer(time) {
 
 function formatTimeLeft(time) {
   // The largest round integer less than or equal to the result of time divided being by 60.
-  const minutes = Math.floor(time / 60);
 
   // Seconds are the remainder of the time divided by 60 (modulus operator)
   let seconds = time % 60;
@@ -116,7 +115,7 @@ function formatTimeLeft(time) {
   }
 
   // The output in MM:SS format
-  return `<div id= "seconds">SECONDS<br><div id="countdown">${minutes}:${seconds}<div><div id="remaining">REMAINING<div>`;
+  return `<div id= "seconds">SECONDS<br><div id="countdown">${seconds}<div><div id="remaining">REMAINING<div>`;
 }
 // Divides time left by the defined time limit.
 function calculateTimeFraction() {
