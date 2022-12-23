@@ -92,9 +92,23 @@ header {
   transition: 1s linear all;
 
   /* Allows the ring to change color when the color value updates */
-  stroke: rgb(68, 211, 218);
+  stroke: currentColor;
+}
+.base-timer__path-remaining.lightblue {
+  color: rgb(68, 211, 218);
 }
 
+.base-timer__path-remaining.yellow {
+  color: rgb(245, 215, 24);
+}
+
+.base-timer__path-remaining.orange {
+  color: rgb(225, 149, 7);
+}
+
+.base-timer__path-remaining.red {
+  color: rgb(218, 14, 14);
+}
 .base-timer__svg {
   /* Flips the svg and makes the animation to move left-to-right */
   transform: scaleX(1);

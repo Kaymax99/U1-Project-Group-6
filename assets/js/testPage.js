@@ -1,6 +1,6 @@
 //----------------------------------------------- Timer -----------------------------------------------------
 let timerInterval;
-const TIME_LIMIT = 30;
+const TIME_LIMIT = 20;
 const timerDiv = document.getElementById("timer");
 
 // Initially, no time has passed, but this will count up
@@ -8,12 +8,33 @@ const timerDiv = document.getElementById("timer");
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 
+// Warning occurs at 15s
+const FOCUS_THRESHOLD = 15;
+// Warning occurs at 10s
+const WARNING_THRESHOLD = 10;
+// Alert occurs at 5s
+const ALERT_THRESHOLD = 5;
+//COLOR back to base
+const INFO_THRESHOLD = 20;
+
 const COLOR_CODES = {
   info: {
-    color: "green",
+    color: "lightblue",
+    threshold: INFO_THRESHOLD,
+  },
+  focus: {
+    color: "yellow",
+    threshold: FOCUS_THRESHOLD,
+  },
+  warning: {
+    color: "orange",
+    threshold: WARNING_THRESHOLD,
+  },
+  alert: {
+    color: "red",
+    threshold: ALERT_THRESHOLD,
   },
 };
-
 let remainingPathColor = COLOR_CODES.info.color;
 
 document.getElementById("timer").innerHTML = `
@@ -77,6 +98,7 @@ function startTimer(time) {
     if (timeLeft === 0) {
       onTimesUp();
     }
+    setRemainingPathColor(timeLeft);
   }
 }
 // Start with an initial value of 20 seconds
@@ -113,6 +135,55 @@ function setCircleDasharray() {
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 
+function setRemainingPathColor(timeLeft) {
+  const { alert, focus, warning, info } = COLOR_CODES;
+
+  // If the remaining time is less than or equal to 5, remove the "warning" class and apply the "alert" class.
+  if (timeLeft <= alert.threshold) {
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(warning.color);
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.add(alert.color);
+
+    // If the remaining time is less than or equal to 10, remove the "focus" class and apply the "warning" class.
+  } else if (timeLeft <= warning.threshold) {
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(focus.color);
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.add(warning.color);
+  }
+  // If the remaining time is less than or equal to 15, remove the base color and apply the "focus" class.
+  else if (timeLeft <= focus.threshold) {
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(info.color);
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.add(focus.color);
+  }
+  // reset the timer bar color when back to 20
+  else if (timeLeft <= info.threshold) {
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(alert.color);
+
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(focus.color);
+
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(warning.color);
+
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.add(info.color);
+  }
+}
 // -------------------------------------------- Questions --------------------------------------------
 window.onload = () => {
   const buttonDiff = document.getElementsByClassName("test-choices");
