@@ -1,0 +1,161 @@
+/* GENERAL RULES */
+body {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  margin: 40px 90px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+#logo {
+  width: 10rem;
+  margin-bottom: 70px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 40px;
+}
+
+span {
+  font-weight: bold;
+}
+
+/* MAIN */
+
+h2 {
+  color: #c2128d;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+main p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.list {
+  margin-left: 25px;
+  margin-top: 50px;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* LAST DIV */
+
+.lastdiv {
+  margin-top: 70px;
+  justify-content: space-between;
+}
+
+.lastdiv {
+  display: flex;
+  align-items: center;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  background: #00ffff;
+  box-shadow: 0px 0px 23px 1px #00ffff;
+  border: none;
+  font-weight: bold;
+  padding: 15px 50px;
+  font-size: 1.3rem;
+}
+
+.bottone {
+  margin-right: 90px;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 1.3rem;
+  width: 1.3rem;
+  border: 2px solid white;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+input[type="checkbox"]:hover {
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  border: none;
+}
+
+input[type="checkbox"]:checked {
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  border: none;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  -webkit-text-fill-color: transparent;
+  animation: textclip 16.5s linear infinite;
+  display: inline-block;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.textCheck {
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2.5s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.hoverOnButton:hover,
+.hoverOnButton:focus {
+  background: linear-gradient(90deg, #00ffff, transparent) #5bb5fe;
+  color: rgb(0, 0, 0);
+}

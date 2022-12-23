@@ -1,0 +1,271 @@
+body {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  margin: 40px 90px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+#logo {
+  width: 10rem;
+  margin-bottom: 70px;
+  padding: 1rem;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.primoP {
+  font-size: 1.7rem;
+  margin: 1rem;
+}
+
+.hcapo {
+  font-size: 1.7rem;
+  margin: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+svg {
+  margin-bottom: 4rem;
+}
+
+.secondoP {
+  font-size: 1.8rem;
+  margin: 1rem;
+  margin-bottom: 4rem;
+}
+
+#contactUs {
+  width: 70vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  background: transparent;
+  border: transparent;
+  width: 46rem;
+  height: 1.5rem;
+  color: white;
+  outline: none;
+}
+
+hr {
+  width: 52rem;
+  background-color: #c2128d;
+  height: 2px;
+  border: none;
+}
+
+.hr {
+  height: 2px;
+  width: 52rem;
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2.5s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+button {
+  background: #00ffff;
+  box-shadow: 0px 0px 23px 1px #00ffff;
+  border: none;
+  font-weight: bold;
+  padding: 15px 50px;
+  font-size: 1.3rem;
+}
+
+.hoverOnButton:hover,
+.hoverOnButton:focus {
+  background: linear-gradient(90deg, #00ffff, transparent) #5bb5fe;
+  color: rgb(0, 0, 0);
+}
+/* STAR */
+
+.star {
+  margin-right: 10px;
+}
+
+:root {
+  --opacity: 50%;
+}
+
+.stars.disabled {
+  pointer-events: none;
+}
+
+.stars a {
+  opacity: var(--opacity);
+  cursor: pointer;
+  opacity: 20%;
+  padding: 0.4em;
+}
+.stars:hover a {
+  opacity: 100%;
+}
+
+.stars a:hover {
+  opacity: 100%;
+}
+
+.stars a:hover ~ a {
+  opacity: 20%;
+}
+
+.stars a.active {
+  opacity: 100%;
+}
+
+#changeText::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  opacity: 59%;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: -90px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  /* display: flex;
+  align-items: flex-start; */
+}
+
+/* The Close Button */
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #000000;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  height: 20px;
+  width: 40%; /* Could be more or less, depending on screen size */
+  font-weight: bold;
+  background: rgb(0, 0, 0);
+  animation: mymove 5s infinite;
+  box-shadow: 0px 12px 26px -4px rgba(0, 0, 0, 0.94);
+  -webkit-box-shadow: 0px 12px 26px -4px rgba(0, 0, 0, 0.94);
+}
+
+@keyframes mymove {
+  from {
+    background-color: rgb(255, 0, 0);
+  }
+  to {
+    background-color: blue;
+  }
+}
+
+.close {
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: bold;
+  float: right;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* SECOND MODAL /*
+
+/* The Modal (background) */
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: -90px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* The Close Button */
+
+/* Modal Content/Box */
+.modal-content2 {
+  background-color: #000000;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  height: 20px;
+  width: 40%; /* Could be more or less, depending on screen size */
+  font-weight: bold;
+  background: rgb(0, 0, 0);
+  animation: mymove2 3s infinite;
+  box-shadow: 0px 12px 26px -4px rgba(0, 0, 0, 0.94);
+  -webkit-box-shadow: 0px 12px 26px -4px rgba(0, 0, 0, 0.94);
+}
+
+@keyframes mymove2 {
+  from {
+    background-color: rgb(119, 255, 0);
+  }
+  to {
+    background-color: rgb(0, 255, 68);
+  }
+}
+
+.close2 {
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: bold;
+  float: right;
+}
+
+.close2:hover,
+.close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
